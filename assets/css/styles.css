@@ -44,6 +44,13 @@
     color: rgb(78, 29, 29);
     
 }
+.signup-div{
+    margin-left: 400px;
+    margin-top: 75px;
+}
+.signupform{
+    display: table;
+}
 #hzlist{
     text-align: center;
     margin-top:5px;
@@ -56,6 +63,11 @@
 #logo{
     color:rgb(99, 145, 175);
     font-weight: bold;
+}
+#pagelabel{
+    text-align: center;
+    color:rgb(99, 145, 175);
+    margin-top:70px;
 }
 
 @media only screen and (min-width:650px){
@@ -124,5 +136,10 @@
     }
     #topmargin{
         margin-top: 20px;
+    }
+    #pagelabel{
+        float:right;
+        color:rgb(99, 145, 175);
+        margin-top:0;
     }
 }
