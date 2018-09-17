@@ -17,6 +17,7 @@
     min-height: 150px;
     background-color:black;
     line-height: 30px;
+    text-align: center;
 }
 .grid-menu > ul {
     list-style-type: none;
@@ -28,7 +29,13 @@
     background-image: url("../images/image1.jpg");
     background-size: contain;
     background-repeat:no-repeat;
-    
+    text-align:center;
+    font-size:1.5em;
+    color: rgb(193, 235, 79);
+}
+.grid-section-others{
+    min-height: 500px;
+    background-color:aliceblue;
     text-align:center;
     font-size:1.5em;
     color: rgb(193, 235, 79);
@@ -45,11 +52,20 @@
     
 }
 .signup-div{
-    margin-left: 400px;
-    margin-top: 75px;
+    display: inline-block;
+    margin-top:70px;
+    text-align: right;
+    color: black;
+
+    
+
 }
 .signupform{
     display: table;
+    font-size: 0.7em;
+    line-height: 30px;
+}
+
 }
 #hzlist{
     text-align: center;
@@ -57,8 +73,11 @@
     margin-bottom: 5px;
 
 }
-#topmargin{
-    margin-top: 300px;
+#advert-main {
+    margin-top: 200px;
+}
+#advert-others{
+    margin-top: 70px;
 }
 #logo{
     color:rgb(99, 145, 175);
@@ -107,11 +126,11 @@
         font-size:1.5em;
         color: rgb(193, 235, 79);
     }
-    .grid-section-profile{
+    .grid-section-others{
         min-height: 500px;
         background-color:aliceblue;
         grid-column: 1/4;
-        text-align:right;
+        text-align:center;
         font-size:1.5em;
         color: rgb(193, 235, 79);
     }
@@ -134,12 +153,13 @@
         text-align: right;
         padding:20px;
     }
-    #topmargin{
+    #advert-main{
         margin-top: 20px;
     }
     #pagelabel{
-        float:right;
+        text-align: center;
         color:rgb(99, 145, 175);
         margin-top:0;
     }
+    
 }
