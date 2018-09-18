@@ -57,8 +57,13 @@
     text-align: right;
     color: black;
 
-    
 
+}
+.newlist{
+    display: inline-block;
+    margin-top:70px;
+    text-align: right;
+    color: black;
 }
 .signupform{
     display: table;
