@@ -65,7 +65,28 @@
     font-size: 0.7em;
     line-height: 30px;
 }
+.profile-picture{
+    display: inline-block;
+    width:150px;
+    height: 150px;
+    border: beige;
+    border-style: groove;
+    text-align: center;
+    background-color:grey;
+    color: darksalmon;
+    margin-top: 30px;
+    margin-left: 30px;
 
+}
+.personal-details{
+    min-width: 300px;
+    font-size: 0.7em;
+    text-align: left;
+    margin-top: 30px;
+    height: 150px;
+    color:gray;
+    display:inline-block;
+    line-height: 30px;
 }
 #hzlist{
     text-align: center;
@@ -86,7 +107,8 @@
 #pagelabel{
     text-align: center;
     color:rgb(99, 145, 175);
-    margin-top:70px;
+    margin-top:80px;
+    font-size: 1.2em;
 }
 
 @media only screen and (min-width:650px){
@@ -148,6 +170,18 @@
         color: rgb(78, 29, 29);
         
     }
+    .profile-picture{
+        float: left;
+        width:150px;
+        height: 150px;
+        border: beige;
+        border-style: groove;
+        text-align: center;
+        background-color:grey;
+        color: darksalmon;
+        margin-top: 30px;
+        margin-left: 30px;
+    }
     #hzlist{
         float:left;
         text-align: right;
@@ -159,7 +193,7 @@
     #pagelabel{
         text-align: center;
         color:rgb(99, 145, 175);
-        margin-top:0;
+        margin-top:30px;
     }
     
 }
