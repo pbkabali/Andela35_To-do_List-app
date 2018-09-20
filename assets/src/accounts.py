@@ -5,6 +5,7 @@ def add_account(name, password):
    
 
 def login(name, password):
-    if name in accounts and password in accounts:
+    key, value = name, password
+    if key in accounts and accounts[key] == value:
         return True
 
