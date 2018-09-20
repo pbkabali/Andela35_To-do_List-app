@@ -1,4 +1,4 @@
-accounts = {}
+accounts = {"paul":"kabali"}
 
 def add_account(name, password):
     accounts[name] = password
