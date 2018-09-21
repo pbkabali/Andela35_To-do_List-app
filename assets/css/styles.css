@@ -26,8 +26,8 @@
 .grid-section{
     min-height: 500px;
     background-color:aliceblue;
-    background-image: url("../images/image1.jpg");
-    background-size: contain;
+    background-image: url("../images/image1_portrait.jpg");
+    background-size: 100%;
     background-repeat:no-repeat;
     text-align:center;
     font-size:1.5em;
@@ -40,11 +40,13 @@
     font-size:1.5em;
     color: rgb(193, 235, 79);
 }
+/*
 .grid-sidebar{
     min-height: 50px;
     background-color:aliceblue;
     background-image: url(../images/colorednotes.jpg);
 }
+*/
 .grid-footer{
     min-height: 50px;
     background-color:black;
@@ -92,18 +94,32 @@
     color:gray;
     display:inline-block;
     line-height: 30px;
+    
 }
 #hzlist{
     text-align: center;
-    margin-top:5px;
     margin-bottom: 5px;
-
+}
+#input1 {
+    border-radius:5px;
+    height: 20px;
+    width: 200px;
+}
+#button1{
+    font-size:1em;
+    width:100px;
+    border-radius:5px;
+    background-color: rgb(128, 128, 128);
+    color:rgb(128, 128, 128);
 }
 #advert-main {
-    margin-top: 200px;
+    color:#062f4f;
+    margin-top: 5px;
+    font-size:0.8em;
 }
 #advert-others{
-    margin-top: 70px;
+    margin-top: 160px;
+    font-size: 1.5em;
 }
 #logo{
     color:rgb(99, 145, 175);
@@ -124,18 +140,19 @@
         grid-template-rows: repeat(7, auto);
     }
     .grid-logo{
-        min-height: 50px;
-        background-color: maroon;
+        min-height: 40px;
+        background-color: rgb(48, 23, 23);
         grid-column: 1/3;
         text-align: start;
         line-height: 50px;
     }
     .grid-logo > h1 {
+        margin-top:5px;
         margin-right: 300px;
     }
     .grid-menu{
-        min-height: 50px;
-        background-color: maroon;
+        min-height: 40px;
+        background-color:rgb(48, 23, 23);
         grid-column: 3/5;
     }
     .grid-menu > ul {
@@ -143,24 +160,25 @@
     
     }
     .grid-section{
-        min-height: 550px;
-        background-color:aliceblue;
+        min-height: 600px;
+        background-color:#e24e42;
         background-image: url("../images/image1.jpg");
         background-size: 100%;
         background-repeat: no-repeat;
-        grid-column: 1/4;
+        grid-column: 1/5;
         text-align:right;
         font-size:1.5em;
         color: rgb(193, 235, 79);
     }
     .grid-section-others{
-        min-height: 500px;
-        background-color:aliceblue;
-        grid-column: 1/4;
+        min-height: 600px;
+        background-color:#062f4f;
+        grid-column: 1/5;
         text-align:center;
         font-size:1.5em;
         color: rgb(193, 235, 79);
     }
+    /*
     .grid-sidebar{
         min-height: 400px;
         background-color:aliceblue;
@@ -168,8 +186,9 @@
         background-color: aliceblue;
         background-image: url(../images/colorednotes.jpg);
     }
+    */
     .grid-footer{
-        min-height: 100px;
+        min-height: 50px;
         background-color:black;
         grid-column: 1/5;
         color: rgb(78, 29, 29);
@@ -177,12 +196,13 @@
     }
     .profile-picture{
         float: left;
-        width:150px;
-        height: 150px;
+        width:170px;
+        height: 200px;
         border: beige;
         border-style: groove;
+        border-radius: 25px;
         text-align: center;
-        background-color:grey;
+        background-color:#062f4f;
         color: darksalmon;
         margin-top: 30px;
         margin-left: 30px;
@@ -193,12 +213,13 @@
         padding:20px;
     }
     #advert-main{
+        color:#062f4f;
         margin-top: 20px;
     }
     #pagelabel{
         text-align: center;
         color:rgb(99, 145, 175);
-        margin-top:30px;
+        margin-top:10px;
     }
     
 }
