@@ -21,7 +21,7 @@ if __name__ == "__main__":
         print ("**************************************")
 
     def task_operations():
-        selection = input("ENTER YOUR SELECTION:")
+        selection = input()
 
         if len(todo_list) == 0 and int(selection)>1:
             print("Your To-do list is empty")
@@ -36,6 +36,7 @@ if __name__ == "__main__":
                 task_operations()
 
             elif selection == "3":
+                print("Your current List is shown below:")
                 for i in todo_list:
                     print(str(todo_list.index(i)+1)+". " + i)
                 menu()
