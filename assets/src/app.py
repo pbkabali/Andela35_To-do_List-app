@@ -95,16 +95,18 @@ if __name__ == "__main__":
     else:
         print ("Non-existent account or wrong login details")
 
-        print("Press 1 to enter your details again")
+        print("Press 1 to enter your details again:")
         print("Press 0 to create new account with username:"+" "+name)
         new_account = input()
+
         if new_account == "1":
             name = input("To use the app,enter your username:\n")
             password = input("Please enter your password: \n")
             if login(name,password):
                 print("Successfully Logged in")      
                 menu()
-                task_operations() 
+                task_operations()
+                 
         elif new_account == "0":
             password = input("Please create password: \n")         
             add_account(name, password)
