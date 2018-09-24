@@ -23,7 +23,12 @@ if __name__ == "__main__":
     def task_operations():
         selection = input()
 
-        if len(todo_list) == 0 and int(selection)>1:
+        if int(selection) not in range(6):
+            print("Unavailable option!")
+            menu()
+            task_operations()
+
+        elif len(todo_list) == 0 and int(selection) in range(2,6):
             print("Your To-do list is empty")
             menu()
             task_operations()
@@ -46,9 +51,14 @@ if __name__ == "__main__":
                 for i in todo_list:
                     print(str(todo_list.index(i)+1)+". " + i)
                 delete_index=input("Enter the number for item to delete:")
-                delete_task(todo_list[int(delete_index)-1])
-                menu()
-                task_operations()
+                if int(delete_index) in range(len(todo_list)+1):
+                    delete_task(todo_list[int(delete_index)-1])
+                    menu()
+                    task_operations()
+                else:
+                    print("item not found on list")
+                    menu()
+                    task_operations()
             
             elif selection == "2":
                 for i in todo_list:
@@ -59,9 +69,19 @@ if __name__ == "__main__":
                 task_operations()
             
             elif selection == "5":
-                delete_all_tasks()
-                menu()
-                task_operations()
+                print("Are you sure you want to delete all your tasks? Y/N:")
+                delete_all = input()
+                if delete_all == "Y" or delete_all == "y":
+                    delete_all_tasks()
+                    menu()
+                    task_operations()
+                elif delete_all == "N" or delete_all == "n":
+                    menu()
+                    task_operations()
+                else:
+                    print("Invalid Response")
+                    menu()
+                    task_operations()
 
             elif selection == "0":
                 print("!!!THANKS FOR USING OUR APP!!!")
