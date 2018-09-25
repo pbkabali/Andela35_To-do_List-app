@@ -118,7 +118,7 @@
     height: 150px;
     color:gray;
     display:inline-block;
-    line-height: 30px;
+    line-height: 40px;
     
 }
 .list-view-div{
@@ -126,6 +126,7 @@
     text-align: left;
     width: 280px;
     min-height: 300px;
+    line-height: 50px;
     border: beige;
     border-bottom-style: groove;
     border-bottom-right-radius: 25px;
@@ -326,7 +327,7 @@
         border-bottom-style: groove;
         border-bottom-right-radius: 25px;
         border-right-style: groove;
-        margin: 20px;
+        margin: 70px;
         margin-top: 40px;
         
     }
@@ -356,6 +357,9 @@
         text-align: center;
         color:rgb(99, 145, 175);
         margin-top:10px;
+    }
+    #back_to_profile{
+        margin-left:20px;
     }
     
 }
