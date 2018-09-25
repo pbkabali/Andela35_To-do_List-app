@@ -1,2 +1,2 @@
 /assets/css/stylesmain.css
-/assets/src/_pycache_/
+/assets/src/__pycache__/

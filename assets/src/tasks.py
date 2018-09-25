@@ -1,5 +1,6 @@
 todo_list = []
 
+#function to add task to todo_list and keep looping for additional tasks
 def create_task(task):
     todo_list.append(task)
     print("Your current List is shown below:")
@@ -12,6 +13,7 @@ def create_task(task):
     else:
         print("your tasks have been recorded")
 
+#function to delete tasks from todo_list and keep looping for additional tasks
 def delete_task(task):
     print("Are you sure you want to delete"+" "+ task.upper() +"? Y/N:")
     delete_confirmation = input()
@@ -33,8 +35,7 @@ def delete_task(task):
         print("Returning to main menu......")
 
 
-
-
+#function to mark finished task in todo_list and keep looping for additional tasks
 def mark_as_finished(task):
     todo_list[todo_list.index(task)] = task + '[FINISHED]'
     print("Your current List is shown below:")
@@ -47,7 +48,7 @@ def mark_as_finished(task):
     else:
         print("Your finished tasks successfully marked")
 
-
+#function to delete all tasks from todo_list
 def delete_all_tasks():
     todo_list.clear()
     print("Your current list is now empty:")
