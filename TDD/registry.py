@@ -1,4 +1,5 @@
-user_accounts = {}
+from registered_users import user_accounts
+import re
 class User:
 
     def __init__(self):
@@ -6,12 +7,27 @@ class User:
         self.details = {}
         self.username= "unknown"
     
-    def register(self, name, username, password, age, email, gender):        
-        user_accounts[username]={}
+    def register(self, name, username, password, age, email, gender): 
+
+        if username.upper() in name.upper():#changing case will not make same username acceptable
+            raise ValueError("username cannot be one of your names")
+        elif len(username) < 4:
+            raise ValueError("username must be atleast 4 characters long") 
+        else:
+            user_accounts[username]={}
+
         user_accounts[username]["Name"] = name
         user_accounts[username]["Password"] = password
         user_accounts[username]["Email"] = email
-        user_accounts[username]["Age"] = age
+        
+        if type(age) == str:
+            raise ValueError("Age must be a number")
+        elif age < 0:
+            raise ValueError("Age must be non-negative")   
+        
+        else:    
+            user_accounts[username]["Age"] = age
+        
         user_accounts[username]["Gender"] = gender
        
 
@@ -103,31 +119,8 @@ if __name__=="__main__":
 
     user1 = User()
 
-    user1.register("Paul", "pbk", "kabali", 30, "engineerbpk@gmail.com", "male")
-   
-    user1.view_age()
+    user1.register("paul balitema", "pbk", "kabali", 30, "engineerbpk@gmail.com", "male")
 
-    print(user1.status)
-    
-    user1.view_user_details()
-
-    user1.view_email()
-
-    user1.login("pbk","kabali")
-    print(user1.status)
-    print(user1.username)
-
-    user1.change_username()
-
-    print (user1.username)
     print (user_accounts)
-
+   
     
-
-
-
-
-
-    
-
-     
