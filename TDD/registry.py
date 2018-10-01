@@ -8,7 +8,7 @@ class User:
         self.username= "unknown"
     
     def register(self, name, username, password, age, email, gender): 
-
+        #check that username is not same as name or less than 4 characters
         if username.upper() in name.upper():#changing case will not make same username acceptable
             raise ValueError("username cannot be one of your names")
         elif len(username) < 4:
@@ -18,8 +18,15 @@ class User:
 
         user_accounts[username]["Name"] = name
         user_accounts[username]["Password"] = password
-        user_accounts[username]["Email"] = email
         
+        #check for correct email format
+        match = re.match(r'^[_a-zA-Z0-9-]+(\.[_a-zA-Z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$', email)
+        if match == None:
+	        raise ValueError('Bad email address format')
+        else:
+            user_accounts[username]["Email"] = email
+        
+        #check that age entered in a number and is non-negative
         if type(age) == str:
             raise ValueError("Age must be a number")
         elif age < 0:

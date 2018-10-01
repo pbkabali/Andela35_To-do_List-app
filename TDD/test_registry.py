@@ -26,6 +26,9 @@ class TestRegistry(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.user.register("paul balitema", "pbkabali", "kabali", -2, "engineerbpk@gmail.com", "male")                      
 
+    def test_registerEmail_wrongFormat(self):
+        with self.assertRaises(ValueError):
+            self.user.register("paul balitema", "pbkabali", "kabali", 30, "engineerbpk.com", "male")                      
 
     def test_changeUserName_notLoggedIn(self):
         self.assertEqual(self.user.change_username("good", "kabali"), "You have to be logged in to change account details!")    
