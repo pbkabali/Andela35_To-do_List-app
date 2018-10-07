@@ -1,9 +1,10 @@
 from flask import Flask, request, render_template, url_for, jsonify
-import json, registry, registered_users
+import json, registry, registered_users, tasks
 
 app = Flask(__name__)
 
-user=registry.User()
+user = registry.User()
+operation = tasks.task_operation()
 
 @app.route('/')
 def home_page():
@@ -45,6 +46,55 @@ def delete_user():
         return 'user successfully deleted!'
     else:
         return "Not logged in!"
+
+@app.route('/tasks')
+def view_list():
+    return jsonify(operation.view_list())
+
+@app.route('/tasks/addtask', methods = ['GET', 'POST'])
+def add_task():
+    if request.method == 'POST':
+        task_to_add = request.form.get('task')
+        operation.create_task(task_to_add)
+        return  jsonify(operation.view_list())
+
+@app.route('/tasks/delete', methods =['POST'])
+def delete_task():
+    task_to_delete = request.form.get('task')
+    if not operation.delete_task(task_to_delete):#confirm if task to delete is in list
+        return 'Task not found!'
+    else:
+        operation.delete_task(task_to_delete)
+        return  jsonify(operation.view_list())
+
+@app.route('/tasks/deleteall', methods = ['DELETE'])
+def delete_all_tasks():
+    operation.delete_all_tasks()
+    return 'Your todo list is now empty!'
+
+@app.route('/tasks/undelete', methods = ['GET', 'POST'])
+def recover_task():
+    if request.method == 'POST':
+        task_to_recover = request.form.get('task')
+        operation.recover_deleted_task(task_to_recover)
+        return jsonify(operation.view_list())
+
+    return jsonify(operation.view_deleted_items())
+
+@app.route('/tasks/mark', methods = ['POST'])
+def mark_task():
+    task_to_mark = request.form.get('task')
+    operation.mark_as_finished(task_to_mark)
+    return jsonify(operation.view_list())
+
+
+@app.route('/tasks/unmark', methods = ['POST'])
+def unmark_task():
+    task_to_unmark = request.form.get('task')
+    operation.unmark_as_finished(task_to_unmark)
+    return jsonify(operation.view_list())        
+    
+
 
 
 if __name__ == "__main__":
