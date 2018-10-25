@@ -5,7 +5,7 @@ python:
   - 3.7
 
 before_script:
-  - pip install requirements.txt
+  - pip install -r requirements.txt
 
 script:
-  - python -m unittest -v TDD/test_registry.py
+  - python -m unittest -v test_registry.py
