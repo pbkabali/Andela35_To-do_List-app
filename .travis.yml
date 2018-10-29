@@ -9,7 +9,7 @@ before_script:
 
 script:
   - cd TDD
-  - python -m pytest --cov=../TDD
+  - python3 -m pytest --cov app --cov-report term-missing
 
 after_script:
   - coveralls
