@@ -9,7 +9,7 @@ before_script:
 
 script:
   - cd TDD
-  - python -m unittest -v test_registry.py
+  - python -m unittest -v --cov=TDD test_registry.py
 
 after_script:
   - coveralls
